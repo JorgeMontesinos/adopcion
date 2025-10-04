@@ -11,11 +11,15 @@ const app=express()
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 
-app.use(cors(
- { origin: "*",  //"https://adopcion-2p70.onrender.com", //"http://localhost:5173",
+app.use(cors())
+
+
+
+/*
+{ origin:"https://adopcion-2p70.onrender.com", //"http://localhost:5173",
   methods: "GET,POST,PUT,DELETE"
- },
-))
+ }
+*/
 
 app.use("/mascotas",routesMascotas)
 app.use("/users",routesUsuarios)
