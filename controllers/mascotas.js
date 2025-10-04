@@ -22,9 +22,10 @@ class mascotasControllers{
     async getOne(req,res){
           try {
                 const {id}=req.params
-                console.log(id)
+                console.log("--params--id-->",id)
 
                 const data=await MascotaModel.getOne(id)
+                console.log("---data-->",data)
                 res.status(200).json(data)
         } catch (e) {
             res.status(400).send(e)
