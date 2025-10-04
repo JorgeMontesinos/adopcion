@@ -8,6 +8,7 @@ class dbClient{
     }
     async conectarDB(queryString){
         try {
+            console.log("----entrando a conectar atlas--")
             queryString=`mongodb+srv://${process.env.USER_DB}:${process.env.PASS_DB}@${process.env.SERVER_DB}/adopcion?retryWrites=true&w=majority`
             await mongoose.connect(queryString)
             console.log("mongoDB ATLAS escuchando")   
